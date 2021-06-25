@@ -10,10 +10,19 @@ export class AppComponent {
 
   salario : number = 4000;
 
-  nome : string = 'BRQ';
+  nomeEmpresa : string = 'BRQ';
+  banana = "two way data binding";
 
-  mostrarMensagem() {
-    let outrNnome = 'Yagão';
-    return outrNnome;
+  mostrarMensagem(texto : string) {
+    return texto;
+  }
+
+  meuClique() {
+    alert(this.title);
+    //this.title = "ai dentro";
+  }
+
+  onKeyUp(valor : string) {
+    console.log(valor);
   }
 }

@@ -2,14 +2,26 @@
 
   <!-- TS para HTML -->
     <!-- Interpolação -->
-    <h2>{{nome}}</h2>
-    {{salario}}
+    <h2>{{nomeEmpresa}}</h2>
+      {{salario + 1000}}
   <!-- Property Binding -->
-    <p [innerHTML]="nome" >Texto</p>
+    <p [innerHTML]="nomeEmpresa" >Texto</p>
+  <!-- Procura a variavel 'title' dentro do componente  -->
+    <p> <input type="text" [value]="nomeEmpresa" id=""> </p>
+    <p> <input type="text" [value]="nomeEmpresa" id=""> </p>
+    <p> <input type="text" [value]="mostrarMensagem('ay papi')" id=""> </p>
+    <p> <input type="text" (keydown)='onKeyUp($event.target.value)' [value]="mostrarMensagem('ay papi')" id=""> Oie</p>
+    <p> <input type="text" [(ngModel)]="nomeEmpresa"></p>
 
 <!-- Event Binding -->
   <!-- HTML para TS -->
-  <button (click)="mostrarMensagem()" >Clique aque</button>
+  <button (click)="meuClique()" >Clique aque</button>
 
   <!-- Two Way Binding -->
-  <input type="text" [(ngModel)]="nome" />
+  <input type="text" [(ngModel)]="nomeEmpresa" />
+
+  <p> <button (click)="meuClique()" >Crica vai</button> </p>
+
+  <app-primeiro></app-primeiro>
+
+
