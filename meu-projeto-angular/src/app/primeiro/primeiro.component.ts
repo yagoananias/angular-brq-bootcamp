@@ -7,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimeiroComponent implements OnInit {
 
-  nome = "Yaguim";
-
   constructor() { }
-
-  mostrarMensagem() {
-    alert("boa pa nois");
-  }
 
   ngOnInit(): void {
   }
