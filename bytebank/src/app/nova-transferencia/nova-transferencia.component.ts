@@ -30,7 +30,7 @@ export class NovaTransferenciaComponent {
   }
 
   private ehValido() {
-    const valido = this.valor > 0;
+    const valido = this.valor > 0.0;
     if (!valido) {
       this.valoresComErro.emit('Informe um valor válido!');
     }
