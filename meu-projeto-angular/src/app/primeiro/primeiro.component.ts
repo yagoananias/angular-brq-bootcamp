@@ -14,4 +14,12 @@ export class PrimeiroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  alteraString() {
+    if (this.minhaClasse == 'btn-danger') {
+      this.minhaClasse = 'btn-success';
+    } else {
+      this.minhaClasse = 'btn-danger';
+    }
+  }
+
 }
