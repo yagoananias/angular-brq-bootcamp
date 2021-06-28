@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimeiroComponent implements OnInit {
 
+  minhaClasse = 'btn-success';
+
   constructor() { }
 
   ngOnInit(): void {
