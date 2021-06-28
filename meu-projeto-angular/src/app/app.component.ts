@@ -13,10 +13,6 @@ export class AppComponent {
   nomeEmpresa : string = 'BRQ';
   banana = "two way data binding";
 
-  mostrarMensagem(texto : string) {
-    return texto;
-  }
-
   meuClique() {
     alert(this.title);
     //this.title = "ai dentro";

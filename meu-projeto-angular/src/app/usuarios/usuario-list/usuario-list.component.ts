@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-usuario-list',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioListComponent implements OnInit {
 
-  constructor() { }
+  usuarios = [
+    { id : 1, nome : "Usuário 1", email: "usu1@usuario.com" },
+    { id : 2, nome : "Usuário 2", email: "usu2@usuario.com" },
+    { id : 3, nome : "Usuário 3", email: "usu3@usuario.com" }
+  ]
+
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

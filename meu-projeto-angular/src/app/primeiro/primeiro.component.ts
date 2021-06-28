@@ -9,11 +9,7 @@ export class PrimeiroComponent implements OnInit {
 
   minhaClasse = 'btn-success';
 
-  usuarios = [
-    { id : 1, nome : "Usuário 1", email: "usu1@usuario.com" },
-    { id : 2, nome : "Usuário 2", email: "usu2@usuario.com" },
-    { id : 3, nome : "Usuário 3", email: "usu3@usuario.com" }
-  ]
+
 
   constructor() { }
 
