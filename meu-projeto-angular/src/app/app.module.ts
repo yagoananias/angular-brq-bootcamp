@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PrimeiroComponent } from './primeiro/primeiro.component';
 
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    UsuariosModule
+    UsuariosModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
