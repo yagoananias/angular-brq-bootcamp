@@ -1,17 +1,22 @@
 <p>usuario-list works!</p>
 
-<app-usuario-detalhe [usuariosFilho]="usuarios"></app-usuario-detalhe>
+<app-usuario-detalhe
+  [usuariosFilho]="usuarioSelecionado"
+  (usuarioEmitter)="onUsuarioEmitter($event)" >
+</app-usuario-detalhe>
 
 <table class="table">
   <tr>
     <th>Id</th>
     <th>Nome</th>
     <th>Email</th>
+    <th>Informações</th>
   </tr>
 
   <tr *ngFor="let u of usuarios">
     <td>{{u.id}}</td>
     <td>{{u.nome}}</td>
     <td>{{u.email}}</td>
+    <td><button class="btn btn-info" (click)="onSelecionarClick(u)" >Botão {{u.nome}} </button></td>
   </tr>
 </table>

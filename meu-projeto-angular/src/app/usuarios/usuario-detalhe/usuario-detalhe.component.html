@@ -1,9 +1,12 @@
 <p>usuario-detalhe works!</p>
 
-<div class="card">
+<div class="card" *ngIf="usuariosFilho">
   <div class="card-body">
-    <p> Nome: NOMEEE SELECIONADO</p>
-    <p> Email: EMAIIL SELECIONADO</p>
+    <p> ID: {{usuariosFilho.id}}</p>
+    <p> Nome: {{usuariosFilho.nome}}</p>
+    <p> Email: {{usuariosFilho.email}}</p>
   </div>
-  <button></button>
+  <button class="col-1 btn-danger">Limpar</button>
 </div>
+
+
