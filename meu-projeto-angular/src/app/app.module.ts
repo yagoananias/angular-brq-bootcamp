@@ -1,3 +1,5 @@
+import { PokemonsModule } from './pokemons/pokemons.module';
+import { PokemonListComponent } from './pokemons/pokemon-list/pokemon-list.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,14 +14,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    PrimeiroComponent
+    PrimeiroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     UsuariosModule,
-    NgbModule
+    NgbModule,
+    PokemonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

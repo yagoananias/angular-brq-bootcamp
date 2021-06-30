@@ -1,0 +1,11 @@
+<p>pokemon-list works!</p>
+<table class="table">
+  <tr>
+     <th>Nome</th>
+     <th>URL</th>
+  </tr>
+  <tr *ngFor="let p of pokemons.results">
+      <td>{{ p.name }}</td>
+      <td> {{ p.url }}</td>
+  </tr>
+</table>
