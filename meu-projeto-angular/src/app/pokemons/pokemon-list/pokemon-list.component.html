@@ -1,11 +1,16 @@
 <p>pokemon-list works!</p>
+
+<app-pokemon-detalhe [pokemonDetalhe]="pokemonSelecionado"></app-pokemon-detalhe>
 <table class="table">
   <tr>
      <th>Nome</th>
      <th>URL</th>
+     <th>Ações</th>
   </tr>
-  <tr *ngFor="let p of pokemons.results">
+  <tr *ngFor="let p of pokemons?.results">
       <td>{{ p.name }}</td>
       <td> {{ p.url }}</td>
+      <td> <button (click)="selecionarPokemon( p.url )">Selecionar {{p.name}}</button></td>
   </tr>
 </table>
+

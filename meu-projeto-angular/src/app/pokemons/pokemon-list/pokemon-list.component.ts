@@ -8,20 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  url = 'https://pokeapi.co/api/v2/pokemon';
   pokemons : any = null;
+  pokemonSelecionado : any = null;
 
   //private http = new HttpClient();
   //this é utilizado quando a variavel é declarada na classe
   constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
-    let i =  this.http.get(this.url)
-       .subscribe(  (x) => {
-         this.pokemons = x;
-         console.log(this.pokemons)
-       } );
-
+    this.http.get("https://pokeapi.co/api/v2/pokemon").subscribe( (x) => {
+        this.pokemons = x;
+        console.log(this.pokemons);
+    } );
    }
+
+  selecionarPokemon( url : string ) {
+    console.log(url);
+    let i = this.http.get(url).subscribe( (x) => {
+      this.pokemonSelecionado = x;
+    } );
+  }
 
 }
