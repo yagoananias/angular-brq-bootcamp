@@ -12,9 +12,9 @@ export class UsuarioListComponent implements OnInit {
   usuarioSelecionado : any = null;
 
   usuarios = [
-    { id : 1, nome : "Usuário 1", email: "usu1@usuario.com" },
-    { id : 2, nome : "Usuário 2", email: "usu2@usuario.com" },
-    { id : 3, nome : "Usuário 3", email: "usu3@usuario.com" }
+    { id : 1, nome : "Usuário 1", email: "usu1@usuario.com", cpf : '1234567890' },
+    { id : 2, nome : "Usuário 2", email: "usu2@usuario.com", cpf : '12345678901' },
+    { id : 3, nome : "Usuário 3", email: "usu3@usuario.com", cpf : '12345678901' }
   ]
 
   constructor() {

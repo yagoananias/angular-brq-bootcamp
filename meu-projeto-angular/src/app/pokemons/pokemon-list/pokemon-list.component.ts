@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { PokemonService } from './../pokemon.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,18 +13,18 @@ export class PokemonListComponent implements OnInit {
 
   //private http = new HttpClient();
   //this é utilizado quando a variavel é declarada na classe
-  constructor(private http : HttpClient) { }
+  //injeção do serviço
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.http.get("https://pokeapi.co/api/v2/pokemon").subscribe( (x) => {
+    this.pokemonService.getAll().subscribe( (x) => {
         this.pokemons = x;
         console.log(this.pokemons);
     } );
    }
 
   selecionarPokemon( url : string ) {
-    console.log(url);
-    this.http.get(url).subscribe( (x) => {
+    this.pokemonService.getOne(url).subscribe( (x) => {
       this.pokemonSelecionado = x;
     } );
   }
