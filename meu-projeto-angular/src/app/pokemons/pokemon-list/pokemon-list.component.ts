@@ -24,7 +24,7 @@ export class PokemonListComponent implements OnInit {
 
   selecionarPokemon( url : string ) {
     console.log(url);
-    let i = this.http.get(url).subscribe( (x) => {
+    this.http.get(url).subscribe( (x) => {
       this.pokemonSelecionado = x;
     } );
   }
