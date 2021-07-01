@@ -1,3 +1,4 @@
+import { FormulariosModule } from './formularios/formularios.module';
 import { PokemonsModule } from './pokemons/pokemons.module';
 import { PokemonListComponent } from './pokemons/pokemon-list/pokemon-list.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
@@ -22,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     UsuariosModule,
     NgbModule,
-    PokemonsModule
+    PokemonsModule,
+    FormulariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

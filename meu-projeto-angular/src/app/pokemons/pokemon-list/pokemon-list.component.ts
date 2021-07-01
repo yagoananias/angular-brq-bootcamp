@@ -1,5 +1,6 @@
 import { PokemonService } from './../pokemon.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -16,9 +17,14 @@ export class PokemonListComponent implements OnInit {
   //private http = new HttpClient();
   //this é utilizado quando a variavel é declarada na classe
   //injeção do serviço
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private ac: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.ac.queryParams.subscribe((params) => {
+      console.log(params);
+    });
+
     this.pokemonService.getAll(this.offset, this.limit).subscribe( (x) => {
         this.pokemons = x;
         console.log(this.pokemons);
