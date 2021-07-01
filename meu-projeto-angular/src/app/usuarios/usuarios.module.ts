@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
 import { CpfPipe } from './cpf.pipe';
+import { UsuariosRoutingModule } from './usuarios-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { CpfPipe } from './cpf.pipe';
     CpfPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UsuariosRoutingModule
   ],
   exports: [
     UsuarioListComponent,

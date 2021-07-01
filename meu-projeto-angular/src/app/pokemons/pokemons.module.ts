@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetalheComponent } from './pokemon-detalhe/pokemon-detalhe.component';
+import { PokemonsRoutingModule } from './pokemons-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PokemonDetalheComponent } from './pokemon-detalhe/pokemon-detalhe.compo
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    PokemonsRoutingModule
   ],
   exports: [
     PokemonListComponent,
