@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormulariosRoutingModule } from './formularios-routing.module';
 import { MeuformComponent } from './meuform/meuform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MeuformComponent } from './meuform/meuform.component';
   ],
   imports: [
     CommonModule,
-    FormulariosRoutingModule
+    FormulariosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FormulariosModule { }
