@@ -9,12 +9,24 @@ import { FormControl } from '@angular/forms';
 export class ErrorFieldMessagesComponent implements OnInit {
 
   //variavel filho que recebe valores do pai
-  @Input() field : FormControl;
+  @Input() field : FormControl | any = null;
   @Input() nome : any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getErrorMessage(){
+    if (this.field.errors){
+      if (this.field.errors.required){
+        return "Campo " + this.nome + " está vazio!";
+      }else if(this.field.errors.minlength){
+        return  "Campo " + this.nome + " precisa ter tamanho mínimo de " + this.field.errors.minlength.requiredLength ;
+      }
+      return "Inválido!";
+    }
+    return null;
   }
 
 }

@@ -1,6 +1,5 @@
-<!--
-  <div class="alert alert-danger" *ngIf="field.value == 'INVALID' && field.touched">
-  <p>{{nome}} inválido!</p>
-  <p *ngIf="field.errors.required">{{ nome }} Obrigatório</p>
+<div class="alert alert-danger" *ngIf="field?.status == 'INVALID' && field.touched">
+  <p> {{ getErrorMessage() }} </p>
+
+  <!-- <p *ngIf="field.errors.required">{{nome}} Obrigatório</p> -->
 </div>
--->

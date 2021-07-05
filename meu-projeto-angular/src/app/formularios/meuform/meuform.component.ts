@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CepService } from '../cep.service';
 
@@ -9,7 +9,7 @@ import { CepService } from '../cep.service';
 })
 export class MeuformComponent implements OnInit {
 
-  @Output() meuForm: FormGroup;
+  meuForm: FormGroup | any = null;
 
   constructor(private cepService : CepService) { }
 
@@ -17,10 +17,10 @@ export class MeuformComponent implements OnInit {
 
     this.meuForm = new FormGroup(
       {
-        email: new FormControl(null, [Validators.required, Validators.email, Validators.min(3)]),
-        password: new FormControl(null, [Validators.required]),
+        email: new FormControl(null, [Validators.required, Validators.email, Validators.minLength(3)]),
+        password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
         cep: new FormControl(null, [Validators.required]),
-        logradouro: new FormControl("rua", [Validators.required]),
+        logradouro: new FormControl(null, [Validators.required]),
         bairro: new FormControl(null, [Validators.required]),
         localidade: new FormControl(null, [Validators.required]),
         uf: new FormControl(null, [Validators.required]),
