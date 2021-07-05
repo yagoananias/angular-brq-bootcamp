@@ -20,7 +20,7 @@ export class MeuformComponent implements OnInit {
         email: new FormControl(null, [Validators.required, Validators.email, Validators.min(3)]),
         password: new FormControl(null, [Validators.required]),
         cep: new FormControl(null, [Validators.required]),
-        logradouro: new FormControl(null, [Validators.required]),
+        logradouro: new FormControl("rua", [Validators.required]),
         bairro: new FormControl(null, [Validators.required]),
         localidade: new FormControl(null, [Validators.required]),
         uf: new FormControl(null, [Validators.required]),
@@ -33,14 +33,30 @@ export class MeuformComponent implements OnInit {
   }
 
   onBuscarCep() {
-    this.cepService.getCep(this.meuForm.controls.cep.value).subscribe(
-      (cepe : any) => {
-        console.log(cepe);
-        this.meuForm.patchValue(
-            cepe
-        )
-      }
-    )
+    if(this.meuForm.controls.cep.value.length == 8 && this.isSomenteNumero(this.meuForm.controls.cep.value)) {
+      this.cepService.getCep(this.meuForm.controls.cep.value).subscribe(
+        (cepe : any) => {
+          this.meuForm.patchValue(
+              cepe
+          )
+        },
+        (error: any) => {
+          alert("Errouuu"),
+          console.log(error)
+        },
+        () => {
+          console.log("Sempre entra aqui(finally)")
+        }
+      )
+    } else {
+      alert("Cep inválido!")
+    }
+
+  }
+
+  isSomenteNumero(value:string){
+    return ((value != null) && (value !== '') &&
+           !isNaN(Number(value.toString())));
   }
 
 }
