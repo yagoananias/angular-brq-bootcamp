@@ -21,8 +21,10 @@ export class ErrorFieldMessagesComponent implements OnInit {
     if (this.field.errors){
       if (this.field.errors.required){
         return "Campo " + this.nome + " está vazio!";
+
       }else if(this.field.errors.minlength){
-        return  "Campo " + this.nome + " precisa ter tamanho mínimo de " + this.field.errors.minlength.requiredLength ;
+        return  "Campo " + this.nome + " precisa ter tamanho mínimo de " + this.field.errors.minlength.requiredLength + " caracteres." ;
+
       }
       return "Inválido!";
     }
