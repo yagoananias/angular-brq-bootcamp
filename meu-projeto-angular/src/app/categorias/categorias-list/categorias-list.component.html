@@ -5,13 +5,17 @@
   <table class="table">
     <tr>
       <th>Categorias</th>
+      <th>Descrição</th>
+      <th>Status</th>
       <th>Ações</th>
 
     </tr>
     <tr *ngFor="let c of categorias?.data">
       <td>{{ c.name }}</td>
-      <td>
-        <button class="btn btn-info mr-2">Editar</button>
+      <td>{{ c.description }}</td>
+      <td>{{ c.status }}</td>
+      <td class="btn-group">
+        <button class="btn btn-info mr-1">Editar</button>
         <button class="btn btn-danger">Deletar</button>
       </td>
     </tr>
