@@ -1,1 +1,25 @@
-<p>produtos-list works!</p>
+<div class="row lg-12 float-right mt-3 mb-3">
+  <button class="btn btn-success" routerLink="/crud-form">Novo Produto</button>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>PRODUTO</th>
+      <th>DESCRIÇÃO</th>
+      <th>FOTO</th>
+      <th>CATEGORIA</th>
+      <th>AÇÕES</th>
+    </tr>
+    <tr *ngFor="let p of produtos?.data">
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.description }}</td>
+      <td><img [src]="p.image"></td>
+      <td>{{ p.categories[0].name }}</td>
+      <td class="btn-group">
+        <button class="btn btn-info mr-2">Editar</button>
+        <button class="btn btn-danger" >Delete</button>
+      </td>
+    </tr>
+  </table>

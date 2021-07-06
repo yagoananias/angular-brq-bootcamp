@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutosService } from '../produtos.service';
 
 @Component({
   selector: 'app-produtos-list',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosListComponent implements OnInit {
 
-  constructor() { }
+  produtos : any = null;
+
+  constructor(private produtosService : ProdutosService) { }
 
   ngOnInit(): void {
+    this.getAll()
+  }
+
+  getAll() {
+    this.produtosService.getAll().subscribe(
+      (data) => {
+        this.produtos = data;
+      }
+    );
+  }
+
+  onDelete(id : number) {
+    this.produtosService.delete( id ).subscribe(
+      (data) => {
+        this.getAll();
+      }
+    )
   }
 
 }
