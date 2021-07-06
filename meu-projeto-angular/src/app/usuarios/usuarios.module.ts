@@ -4,6 +4,7 @@ import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
 import { CpfPipe } from './cpf.pipe';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,11 +16,11 @@ import { UsuariosRoutingModule } from './usuarios-routing.module';
   ],
   imports: [
     CommonModule,
-    UsuariosRoutingModule
+    UsuariosRoutingModule,
+    SharedModule
   ],
   exports: [
     UsuarioListComponent,
-    UsuarioDetalheComponent
   ]
 })
 export class UsuariosModule { }
