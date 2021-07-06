@@ -24,4 +24,12 @@ export class CategoriasListComponent implements OnInit {
     );
   }
 
+  onDelete(id : number) {
+    this.categoriasService.delete( id ).subscribe(
+      (data) => {
+        this.getAll();
+      }
+    )
+  }
+
 }

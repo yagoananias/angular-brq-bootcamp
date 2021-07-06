@@ -1,5 +1,5 @@
 <div class="row lg-12 float-right mt-3 mb-3">
-  <button class="btn btn-success" routerLink="/crud-form">Nova Categoria</button>
+  <button class="btn btn-success" routerLink="/categorias-form">Nova Categoria</button>
 </div>
 
   <table class="table">
@@ -15,8 +15,8 @@
       <td>{{ c.description }}</td>
       <td>{{ c.status }}</td>
       <td class="btn-group">
-        <button class="btn btn-info mr-1">Editar</button>
-        <button class="btn btn-danger">Deletar</button>
+        <button class="btn btn-info mr-1" [routerLink]="['/categorias-form', c.id]">Editar</button>
+        <button class="btn btn-danger" (click)="onDelete( c.id )">Deletar</button>
       </td>
     </tr>
   </table>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,6 +14,31 @@ export class CategoriasService {
 
   getAll() {
     return this.http.get(this.url);
+  }
+
+  getOne(id : number) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+  private getHeader() {
+    //criando header da requisição
+    let headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.auth_token}`
+    })
+    return { headers : headers }
+  }
+
+  save(categoria : any){
+    this.getHeader()
+    return this.http.post(this.url, categoria, this.getHeader() );
+  }
+
+  delete ( id : number ){
+    return this.http.delete(`${this.url}/${id}`, this.getHeader() );
+  }
+
+  update(id : number, categoria: any) {
+    return this.http.patch(`${this.url}/${id}`, categoria, this.getHeader() )
   }
 
 }

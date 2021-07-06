@@ -5,7 +5,8 @@ import { CategoriasListComponent } from './categorias-list/categorias-list.compo
 
 const routes: Routes = [
   { path : 'categorias-list', component : CategoriasListComponent },
-  { path : 'categorias-form', component : CategoriasFormComponent }
+  { path : 'categorias-form', component : CategoriasFormComponent },
+  { path: 'categorias-form/:id', component: CategoriasFormComponent }
 ];
 
 @NgModule({
