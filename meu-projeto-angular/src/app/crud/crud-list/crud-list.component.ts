@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from '../crud.service';
 
 @Component({
   selector: 'app-crud-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudListComponent implements OnInit {
 
-  constructor() { }
+  usuarios : any = null;
+
+  constructor(private crudService : CrudService) { }
 
   ngOnInit(): void {
+    this.crudService.getAll().subscribe(
+      (data) => {
+        this.usuarios = data;
+      }
+    );
   }
 
 }

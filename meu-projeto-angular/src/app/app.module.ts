@@ -10,6 +10,7 @@ import { PrimeiroComponent } from './primeiro/primeiro.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
+import { CrudModule } from './crud/crud.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
     UsuariosModule,
     NgbModule,
     PokemonsModule,
-    FormulariosModule
+    FormulariosModule,
+    CrudModule
   ],
   providers: [],
   bootstrap: [AppComponent]

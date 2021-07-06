@@ -1,1 +1,12 @@
-<p>crud-list works!</p>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>NOME</th>
+    <th>E-MAIL</th>
+  </tr>
+  <tr *ngFor="let u of usuarios?.data">
+    <td>{{ u.id }}</td>
+    <td>{{ u.name }}</td>
+    <td>{{ u.email }}</td>
+  </tr>
+</table>
