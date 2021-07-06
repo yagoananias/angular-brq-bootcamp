@@ -1,0 +1,18 @@
+<div class="row lg-12 float-right mt-3 mb-3">
+  <button class="btn btn-success" routerLink="/crud-form">Nova Categoria</button>
+</div>
+
+  <table class="table">
+    <tr>
+      <th>Categorias</th>
+      <th>Ações</th>
+
+    </tr>
+    <tr *ngFor="let c of categorias?.data">
+      <td>{{ c.name }}</td>
+      <td>
+        <button class="btn btn-info mr-2">Editar</button>
+        <button class="btn btn-danger">Deletar</button>
+      </td>
+    </tr>
+  </table>

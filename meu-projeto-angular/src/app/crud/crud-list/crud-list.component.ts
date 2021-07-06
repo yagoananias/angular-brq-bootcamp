@@ -13,11 +13,23 @@ export class CrudListComponent implements OnInit {
   constructor(private crudService : CrudService) { }
 
   ngOnInit(): void {
+    this.getAll()
+  }
+
+  getAll() {
     this.crudService.getAll().subscribe(
       (data) => {
         this.usuarios = data;
       }
     );
+  }
+
+  onDelete(id : number) {
+    this.crudService.delete( id ).subscribe(
+      (data) => {
+        this.getAll();
+      }
+    )
   }
 
 }

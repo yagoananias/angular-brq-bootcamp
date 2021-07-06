@@ -1,6 +1,7 @@
-<div class="col-lg-12" style="text-align: right;">
-<button class="btn btn-info" routerLink="/crud-form">Novo Usuário</button>
+<div class="row lg-12 float-right mt-3 mb-3">
+<button class="btn btn-success" routerLink="/crud-form">Novo Usuário</button>
 </div>
+
 <table class="table">
   <tr>
     <th>ID</th>
@@ -12,9 +13,9 @@
     <td>{{ u.id }}</td>
     <td>{{ u.name }}</td>
     <td>{{ u.email }}</td>
-    <td>
-      <button class="btn btn-info">Editar</button>
-      <button class="btn btn-danger">Delete</button>
+    <td class="col-lg-12">
+      <button class="btn btn-info mr-2" [routerLink]="['/crud-form', u.id]">Editar</button>
+      <button class="btn btn-danger" (click)="onDelete( u.id )">Delete</button>
     </td>
   </tr>
 </table>

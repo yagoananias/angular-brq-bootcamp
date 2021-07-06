@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorFieldMessagesComponent } from './components/error-field-messages/error-field-messages.component';
 import { CpfPipe } from './pipes/cpf.pipe';
 
-
-
 @NgModule({
   declarations: [
     ErrorFieldMessagesComponent,

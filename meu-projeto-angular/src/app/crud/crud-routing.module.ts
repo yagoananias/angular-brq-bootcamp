@@ -6,7 +6,7 @@ import { CrudListComponent } from './crud-list/crud-list.component';
 const routes: Routes = [
   { path:'crud-list', component: CrudListComponent },
   { path:'crud-form', component: CrudFormComponent },
-  { path:'crud-form/:id', component: CrudFormComponent }
+  { path: 'crud-form/:id', component: CrudFormComponent }
 ];
 
 @NgModule({

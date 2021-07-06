@@ -11,6 +11,7 @@ import { PrimeiroComponent } from './primeiro/primeiro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { CrudModule } from './crud/crud.module';
+import { CategoriasModule } from './categorias/categorias.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CrudModule } from './crud/crud.module';
     NgbModule,
     PokemonsModule,
     FormulariosModule,
-    CrudModule
+    CrudModule,
+    CategoriasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
