@@ -30,15 +30,12 @@ export class CategoriasFormComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(
       (param) => {
-        console.log(param)
-
         //é edição
         if(param.id) {
           this.isEdicao = true;
           this.id = param.id;
           this.categoriasService.getOne(this.id).subscribe(
             (resp : any) => {
-              console.log(resp);
               this.meuForm.patchValue(resp.data)
             }
           )
@@ -51,7 +48,6 @@ export class CategoriasFormComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.meuForm);
 
     if(this.isEdicao) {
       this.categoriasService.update( this.id, this.meuForm.value ).subscribe(

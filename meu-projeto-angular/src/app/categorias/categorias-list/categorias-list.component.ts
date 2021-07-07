@@ -26,8 +26,20 @@ export class CategoriasListComponent implements OnInit {
 
   onDelete(id : number) {
     this.categoriasService.delete( id ).subscribe(
-      (data) => {
-        this.getAll();
+      () => {
+
+        let i = this.categorias.data.findIndex( (x : any) => x.id == id );
+        this.categorias.data.splice(i,1);
+
+
+          //this.getAll()
+
+          // for(let i = 0; i < this.categorias.data.length; i++){
+
+          //   if (this.categorias.data[i].id == id){
+          //     this.categorias.data.splice(i,1);
+          //   }
+          // }
       }
     )
   }

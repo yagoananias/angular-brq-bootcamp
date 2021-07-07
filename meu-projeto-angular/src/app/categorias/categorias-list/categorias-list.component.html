@@ -4,6 +4,7 @@
 
   <table class="table">
     <tr>
+      <th>ID</th>
       <th>Categorias</th>
       <th>Descrição</th>
       <th>Status</th>
@@ -11,6 +12,7 @@
 
     </tr>
     <tr *ngFor="let c of categorias?.data">
+      <td>{{ c.id }}</td>
       <td>{{ c.name }}</td>
       <td>{{ c.description }}</td>
       <td>{{ c.status }}</td>
