@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
 
 const routes: Routes = [
-  { path:'usuarios', component: UsuarioListComponent }
+  { path:'usuarios-list', component: UsuarioListComponent }
 ];
 
 @NgModule({

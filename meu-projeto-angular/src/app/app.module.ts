@@ -1,5 +1,3 @@
-import { FormulariosModule } from './formularios/formularios.module';
-import { PokemonsModule } from './pokemons/pokemons.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,9 +8,6 @@ import { PrimeiroComponent } from './primeiro/primeiro.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
-import { CrudModule } from './crud/crud.module';
-import { CategoriasModule } from './categorias/categorias.module';
-import { ProdutosModule } from './produtos/produtos.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +20,6 @@ import { ProdutosModule } from './produtos/produtos.module';
     SharedModule,
     UsuariosModule,
     NgbModule,
-    PokemonsModule,
-    FormulariosModule,
-    CrudModule,
-    CategoriasModule,
-    ProdutosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

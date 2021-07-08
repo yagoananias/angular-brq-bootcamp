@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProdutosFormComponent } from './produtos-form/produtos-form.component';
 
 const routes: Routes = [
-  { path:'produtos', component: ProdutosListComponent },
+  { path:'produtos-list', component: ProdutosListComponent },
   { path:'produtos-form', component: ProdutosFormComponent }
 ];
 
