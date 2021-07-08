@@ -1,12 +1,16 @@
+import { PokemonGuardService } from './shared/services/pokemon-guard.service';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { PrimeiroComponent } from './primeiro/primeiro.component';
 
 const routes: Routes = [
   { path:'', component: PrimeiroComponent },
   { path: 'pokemons',
     loadChildren: () => import('./pokemons/pokemons.module')
-      .then(m => m.PokemonsModule) },
+      .then(m => m.PokemonsModule), canActivate : [PokemonGuardService] },
+  { path: 'auth',
+    loadChildren: () => import('./auth/auth.module')
+      .then(m => m.AuthModule) },
   { path: 'categorias',
   loadChildren: () => import('./categorias/categorias.module')
     .then(m => m.CategoriasModule) },
