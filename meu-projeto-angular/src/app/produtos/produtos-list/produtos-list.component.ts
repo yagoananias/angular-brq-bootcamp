@@ -24,12 +24,23 @@ export class ProdutosListComponent implements OnInit {
     );
   }
 
-  onDelete(id : number) {
-    this.produtosService.delete( id ).subscribe(
-      (data) => {
-        this.getAll();
-      }
-    )
+  onDelete( id : number) {
+    this.produtosService.delete(id)
+      .subscribe(
+        () => {
+          let index = this.produtos.data.findIndex( (x : any) => x.id == id );
+          this.produtos.splice (index, 1);
+        }
+      );
+  }
+
+  getCategories( categories : any) {
+    let response = ``;
+    if(categories.length > 0) {
+      categories.forEach( (el : any) => {
+        response += `${el.name}; `
+      })
+    } return response
   }
 
 }

@@ -18,7 +18,7 @@
       <td>US${{ p.price }}</td>
       <td>{{ p.description }}</td>
       <td><img [src]="p.image"></td>
-      <td>{{ p.categories[0].name }}</td>
+      <td>{{ getCategories( p.categories ) }}</td>
       <td class="btn-group">
         <button class="btn btn-info mr-2">Editar</button>
         <button class="btn btn-danger" >Delete</button>
