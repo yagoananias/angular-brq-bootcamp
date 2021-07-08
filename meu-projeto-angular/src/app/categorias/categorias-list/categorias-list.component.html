@@ -17,7 +17,7 @@
       <td>{{ c.description }}</td>
       <td>{{ c.status }}</td>
       <td class="btn-group">
-        <button class="btn btn-info mr-1" [routerLink]="['/categorias-form', c.id]">Editar</button>
+        <button class="btn btn-info mr-1" [routerLink]="['/categorias/categorias-form', c.id]">Editar</button>
         <button class="btn btn-danger" (click)="onDelete( c.id )">Deletar</button>
       </td>
     </tr>

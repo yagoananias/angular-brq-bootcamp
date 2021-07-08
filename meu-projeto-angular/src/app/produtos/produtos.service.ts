@@ -1,15 +1,16 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HeaderService } from './../shared/services/header.service';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutosService {
 
-  url = 'https://gorest.co.in/public-api/products';
-  auth_token : string = '0c966a111d31be9b9ff893213f4e4a2480d2ec5ad74ee217aa362c8771a70b81';
+  url = `${environment.API}/products`;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private headerService: HeaderService) { }
 
   getAll() {
     return this.http.get(this.url);
@@ -19,24 +20,15 @@ export class ProdutosService {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  private getHeader() {
-    //criando header da requisição
-    let headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.auth_token}`
-    })
-    return { headers : headers }
-  }
-
   save(product : any){
-    this.getHeader()
-    return this.http.post(this.url, product, this.getHeader() );
+    return this.http.post(this.url, product, this.headerService.getHeader());
   }
 
   delete ( id : number ){
-    return this.http.delete(`${this.url}/${id}`, this.getHeader() );
+    return this.http.delete(`${this.url}/${id}`, this.headerService.getHeader());
   }
 
   update(id : number, product: any) {
-    return this.http.patch(`${this.url}/${id}`, product, this.getHeader() )
+    return this.http.patch(`${this.url}/${id}`, product, this.headerService.getHeader())
   }
 }
