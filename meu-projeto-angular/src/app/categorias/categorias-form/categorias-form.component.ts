@@ -52,7 +52,7 @@ export class CategoriasFormComponent implements OnInit {
     if(this.isEdicao) {
       this.categoriasService.update( this.id, this.meuForm.value ).subscribe(
         (data) => {
-          this.router.navigate(['/categorias-list'])
+          this.router.navigate(['/categorias/categorias-list'])
         }
       )
 
@@ -62,7 +62,7 @@ export class CategoriasFormComponent implements OnInit {
         (data) => {
           console.log(data)
           this.meuForm.reset();
-          this.router.navigate(['/categorias-list'])
+          this.router.navigate(['/categorias/categorias-list'])
         }
       );
 
