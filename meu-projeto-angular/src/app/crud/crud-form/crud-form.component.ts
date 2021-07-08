@@ -57,7 +57,7 @@ export class CrudFormComponent implements OnInit {
     if(this.isEdicao) {
       this.crudService.update( this.id, this.meuForm.value ).subscribe(
         (data) => {
-          this.router.navigate(['/crud-list'])
+          this.router.navigate(['crud/crud-list'])
         }
       )
 
@@ -67,7 +67,7 @@ export class CrudFormComponent implements OnInit {
         (data) => {
           console.log(data)
           this.meuForm.reset();
-          this.router.navigate(['/crud-list'])
+          this.router.navigate(['crud/crud-list'])
         }
       );
 
